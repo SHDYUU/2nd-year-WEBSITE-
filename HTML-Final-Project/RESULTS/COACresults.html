@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../logo/tupv.png" type="image/png"/>
+  <title> COA | Results</title>
+  
+<style>
+
+  :root {
+  --blood-orange: #FE0000;
+  --grace-red: #AF0000;
+  --pigment-red: #730000;
+  --midnight: #00232A;
+  --sunray: #FF9B9B;
+  --snow: #FFFFFA;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+/* Main Css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url(../gallery/Mechatronics\ Engineering\ Technology\ Area.JPG); 
+  background-size: cover;       
+  background-position: top;  
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  color: var(--midnight);
+}
+
+.top-bar {
+  background: linear-gradient(to right, #aa1919, #5d0f0f);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.univ-info h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.univ-info p {
+  font-style: italic;
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.top-bar-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 15px;
+}
+
+.nav-bar {
+  background-color: #002b36;
+}
+
+.nav-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar ul li {
+  position: relative;
+}
+
+.nav-bar ul li a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #002b36;
+  position: relative;
+}
+
+.nav-bar > ul > li > a::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: var(--blood-orange);
+  position: absolute;
+  bottom: 7px;
+  left: 0;
+  transition: width 0.5s ease;
+}
+
+.nav-bar > ul > li:hover > a::before {
+  width: 100%;
+}
+
+.nav-bar .dropdown a {
+  position: relative;
+}
+
+.nav-bar .dropdown a::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: var(--blood-orange);
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  transition: width 0.5s ease;
+}
+
+.nav-bar .dropdown a:hover::before {
+  width: 100%;
+}
+
+.nav-bar .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #002b36;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  z-index: 999;
+}
+
+.nav-bar .dropdown li {
+  width: 100%;
+}
+
+.nav-bar .dropdown a {
+  padding: 12px 20px;
+  background-color: #7c0000;
+  display: block;
+}
+
+.nav-bar ul li:hover > .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-bar ul li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 4px;
+  background: rgba(254, 0, 0, 10);
+  border-radius: 50px;
+  filter: blur(2px);
+}
+
+.nav-bar ul li ul.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #800000;
+  min-width: 200px;
+  z-index: 999;
+  flex-direction: column;
+}
+
+.nav-bar ul li ul.dropdown li {
+  width: 100%;
+}
+
+.nav-bar ul li ul.dropdown li a {
+  padding: 12px 16px;
+  white-space: nowrap;
+  background-color: #002b36;
+  color: white;
+  font-weight: normal;
+}
+
+.nav-bar ul li ul.dropdown li a:hover {
+  background-color: #053440;
+}
+
+.nav-bar ul li:hover > ul.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.card h1 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  max-width: 280px;
+  border-radius: 8px;
+  transition: transform 0.2s ease-out;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.popup-menu {
+  display: block;
+  opacity: 0;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.555);
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.popup-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.popup-menu a {
+  display: block;
+  margin-bottom: 5px;
+  text-decoration: none;
+  color: black;
+  position: relative; 
+  padding-bottom: 4px;
+}
+
+.popup-menu a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--blood-orange);
+  transition: width 0.3s ease;
+}
+
+.popup-menu a:hover::before {
+  width: 100%;
+}
+
+.footer {
+  background-color: var(--midnight);
+  color: var(--snow);
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+}
+
+.coengresults h1,
+.coacresults h1,
+.coetresults h1 {
+  color: white;
+  text-align: center;
+}
+
+#linkMenu {
+  background: rgba(255, 255, 255, 0.95);
+  color: #00232A;
+}
+
+#linkMenu a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  padding-bottom: 4px;
+}
+
+#linkMenu a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--blood-orange);
+  transition: width 0.3s ease;
+}
+
+#linkMenu a:hover::before {
+  width: 100%;
+}
+</style>
+
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="left-section">
+    <img src="../logo/tupv.png" alt="TUPV Logo" class="logo" />
+    <div class="univ-info">
+      <h1>TECHNOLOGICAL UNIVERSITY OF THE PHILIPPINES - VISAYAS</h1>
+      <p>"Tatag TUPVian: Teknolohiyang Angat, Pilipinong Kaakibat"</p>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<div class="nav-bar">
+  <ul>
+  <li><a href="../website.html">HOME</a></li>
+
+  <li class="dropdown-parent">
+    <a href="../about.html" onclick="return false;">ABOUT TUP</a>
+    <ul class="dropdown">
+      <li><a href="../about/mission.html">Mission</a></li>
+      <li><a href="../about/vision.html">Vision</a></li>
+      <li><a href="../about/core-values.html">Core Values</a></li>
+      <li><a href="../about/hymn.html">TUP Hymn</a></li>
+    </ul>
+  </li>
+
+  <li class="dropdown-parent">
+    <a href="../admission.html" onclick="return false;">ADMISSION</a>
+    <ul class="dropdown">
+      <li><a href="../admission/admission_process.html">Admission Process</a></li>
+      <li><a href="../admission/enrollment_guide.html">Enrollment Guide</a></li>
+    </ul>
+  </li>
+
+  <li class="dropdown-parent">
+    <a href="../student.html" onclick="return false;">STUDENT</a>
+    <ul class="dropdown">
+      <li><a href="../student/organization.html">Organizations</a></li>
+      <li><a href="../student/usg.html">USG Officers</a></li>
+    </ul>
+  </li>
+
+  <li class="dropdown-parent">
+    <a href="../academics.html" onclick="return false;">ACADEMICS</a>
+    <ul class="dropdown">
+      <li><a href="../academics/coe.html">College of Engineering</a></li>
+      <li><a href="../academics/ctech.html">College of Automation and Control</a></li>
+      <li><a href="../academics/artsci.html">College of Engineering Technology</a></li>
+    </ul>
+  </li>
+</ul>
+</div>
+
+
+ <section> 
+  <div class="gallery">
+    <!--MXE CARD-->
+    <div class="card">
+      <h1>COAC MXE-ICE-BMXT Results</h1>
+        <a href="#">
+          <img src="../gallery/COAC_logo-removebg-preview.png" alt="COAC RESULTS" loading="lazy"onclick="showMenu(event, 'coacMenu')">
+        </a>  
+    </div>
+<div id="coacMenu" class="popup-menu" onmouseover="cancelHide()" onmouseout="delayedHide()">
+  <a href="https://drive.google.com/file/d/1xyVsWXrXsN-4OBvYplRwX1qN2Btxv2M7/view" target="_blank">BATCH 1 RESULTS</a>
+
+</div>
+
+
+</section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2025 Technological University of the Philippines Visayas</p>
+  </div>
+
+
+
+<!-- SCRIPT PARA SA POP UP-->
+<script>
+  let hideTimeout;
+  let currentMenu = null;
+
+  function showMenu(event, menuId) {
+    event.stopPropagation();
+
+    // Hide previously shown menu
+    if (currentMenu && currentMenu !== document.getElementById(menuId)) {
+      currentMenu.classList.remove("show");
+    }
+
+    const menu = document.getElementById(menuId);
+    currentMenu = menu;
+
+    // Position the popup near the clicked image
+    menu.style.left = event.pageX + "px";
+    menu.style.top = event.pageY + "px";
+
+    // Show the menu with animation
+    menu.classList.add("show");
+  }
+
+  function hideMenu() {
+    if (currentMenu) {
+      currentMenu.classList.remove("show");
+    }
+  }
+
+  function cancelHide() {
+    clearTimeout(hideTimeout);
+  }
+
+  function delayedHide() {
+    hideTimeout = setTimeout(hideMenu, 300);
+  }
+
+  // Hide menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!currentMenu || currentMenu.contains(e.target)) return;
+    hideMenu();
+  });
+</script>
+</body>
+</html>

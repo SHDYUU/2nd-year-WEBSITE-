@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../logo/tupv.png" type="image/png"/>
+  <title> Home | TUPV </title>
+  <link rel="stylesheet" href="css/style1.css" />
+  <script src="js/script1.js" defer></script>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="left-section">
+    <img src="logo/tupv.png" alt="TUPV Logo" class="logo" />
+    <div class="univ-info">
+      <h1>TECHNOLOGICAL UNIVERSITY OF THE PHILIPPINES - VISAYAS</h1>
+      <p>"Tatag TUPVian: Teknolohiyang Angat, Pilipinong Kaakibat"</p>
+    </div>
+  </div>
+    <div class="menu-toggle" id="menuToggle">
+      ☰
+    </div>
+</div>
+  
+<!-- Navigation -->
+<div class="nav-bar" id="navBar">
+  <ul>
+    <li><a href="website.html" class="active">HOME</a></li>
+
+    <li>
+      <a href="about.html" onclick="return false;">ABOUT TUP</a>
+      <ul class="dropdown">
+        <li><a href="about/mission.html">Mission</a></li>
+        <li><a href="about/vision.html">Vision</a></li>
+        <li><a href="about/core-values.html">Core Values</a></li>
+        <li><a href="about/hymn.html">TUP Hymn</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="admission.html" onclick="return false;">ADMISSION</a>
+      <ul class="dropdown">
+        <li><a href="admission/admission_process.html">Admission Process</a></li>
+        <li><a href="admission/enrollment_guide.html">Enrollment Guide</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="student.html" onclick="return false;">STUDENT</a>
+      <ul class="dropdown">
+        <li><a href="student/organization.html">Organizations</a></li>
+        <li><a href="../student/usg.html">USG Officers</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="academics.html" onclick="return false;">ACADEMICS</a>
+      <ul class="dropdown">
+        <li><a href="academics/coe.html">College of Engineering</a></li>
+        <li><a href="academics/ctech.html">College of Automation and Control</a></li>
+        <li><a href="academics/artsci.html">College of Arts and Sciences</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="slideshow-bg-wrapper">
+
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+        <video autoplay muted loop id="myVideo">
+        <source src="gallery/TUPV infomercial.mp4" type="video/mp4">
+        </video>
+        <div class="text"><p>CLICK TO UNMUTE/MUTE</p></div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <span class="dot" onclick="currentSlide(0)"></span>
+</div> 
+
+  <div class="container scroll-fade-up">
+<!-- Director Profile Section -->
+    <div class="director-profile">
+      <img src="gallery/campus director.jpg" alt="Campus Director Eric Malo-oy">
+      <div class="cards-container">
+        <div class="profile-card">
+          <div class="name">DOC. ERIC MALO-OY</div>
+          <div class="role">CAMPUS DIRECTOR</div>
+        </div>
+      </div>
+
+<!-- TUPV Description -->
+      <div class="tupv-description">
+        <p>
+          <strong>The Technological University of the Philippines – Visayas (TUPV)</strong> is a distinguished state university located in Talisay City, Negros Occidental. Established in 1977 as the Visayas Technician Institute (VTI), it became part of the TUP system in 1978 and was renamed TUP Visayas in 1985.
+        </p>
+
+        <h3>Academic Excellence and Achievements</h3>
+        <ul>
+          <li><strong>Top Performing School:</strong> In April 2025, TUPV achieved a 96.30% passing rate in the Electronics Technician Licensure Examination, surpassing the national average of 81.75%. Graduates Jayvee Fuentebella and Jan Frederick Valenton both secured first place with a rating of 95%.</li>
+          <li><strong>Consistent Board Exam Success:</strong> TUPV has a history of producing topnotchers in various licensure exams, including the Electronics Engineer Licensure Examination, where it ranked second among top-performing schools with an 88.16% passing rate in April 2025.</li>
+        </ul>
+
+        <h3>Campus and Programs</h3>
+        <ul>
+          <li><strong>Main Campus and Extensions:</strong> The main campus is situated in Talisay City, with extension campuses in Sagay City and Cadiz City.</li>
+          <li><strong>Academic Offerings:</strong> TUPV provides a range of programs, including 3-year technology courses, bachelor's degrees, and master's degrees in technology.</li>
+        </ul>
+
+        <h3>Commitment to Innovation and Sustainability</h3>
+        <p>
+          <strong>Technology Conventions:</strong> TUPV actively promotes research and innovation through events like its 5th Technology Convention, which showcased Blue, Green, and Circular Economy-related technologies.
+        </p>
+      </div>
+    </div>
+
+<!-- Campus List Section -->
+<div class="campus-list">
+  <h2 style="text-align: center; color: white; margin-bottom: 20px;">Campuses</h2>
+
+  <div class="campus-card">
+    <a href="https://www.tup.edu.ph" target="_blank">
+      <img src="gallery/manila.jpg" alt="TUP Manila">
+    </a>
+    <div class="campus-info">
+      <h4>TUP Manila</h4>
+      <p>tup@tup.edu.ph</p>
+    </div>
+  </div>
+
+  <div class="campus-card">
+    <a href="https://www.tupcavite.edu.ph" target="_blank">
+      <img src="gallery/cavite.jpg" alt="TUP Cavite">
+    </a>
+    <div class="campus-info">
+      <h4>TUP Cavite</h4>
+      <p>cavite@tup.edu.ph</p>
+    </div>
+  </div>
+
+  <div class="campus-card">
+    <a href="https://www.tupt.edu.ph" target="_blank">
+      <img src="gallery/taguig.jfif" alt="TUP Taguig">
+    </a>
+    <div class="campus-info">
+      <h4>TUP Taguig</h4>
+      <p>tup.taguig@tup.edu.ph</p>
+    </div>
+  </div>
+
+</div>
+  </div>
+
+
+<div class="page-layout">
+<section><a class="header"><h1>ANNOUNCEMENT AND ADVISORIES</h1></a>  
+
+    <div class="gallery">
+      <div class="scroll-reveal">
+        <div class="profile-card" style="background-color: rgba(0, 0, 0, 0.281);">
+          <p class="bio">
+            <a class="desc"href="results.html" target="_blank">
+            <img src="gallery/results are out.png" alt="Image 1" class="profile-pic">
+            <b>RESULTS ARE OUT‼️Congratulations to our incoming first year students and welcome to TUP Visayas..</b>
+            </a>
+          </p>
+        </div>
+        
+      <div class="scroll-reveal">
+        <div class="profile-card" style="background-color: rgba(0, 0, 0, 0.281);">
+          <p class="bio">
+            <a class="desc"href="https://www.facebook.com/photo?fbid=1155187913314004&set=a.469233335242802" target="_blank">
+            <img src="gallery/shifttoaltdelmode.jpg" alt="Image 1" class="profile-pic">
+            <b>‼️ 𝗔𝗧𝗧𝗘𝗡𝗧𝗜𝗢𝗡 𝗧𝗨𝗣𝗩𝗜𝗔𝗡𝗦 ‼️
+            According to 𝗖𝗗 𝗠𝗲𝗺𝗼 𝟮𝟬𝟮𝟱-𝟬𝟳𝟲, in light of the forecasted extreme heat index, Campus Director Dr. Eric Malo-oy has ordered the implementation of the 𝗔𝗹𝘁𝗲𝗿𝗻𝗮𝘁𝗶𝘃𝗲 𝗗𝗲𝗹𝗶𝘃𝗲𝗿𝘆 𝗠𝗼𝗱𝗲 (𝗔𝗗𝗠) 𝘁𝗼𝗺𝗼𝗿𝗿𝗼𝘄, 𝗠𝗮𝘆 𝟮𝟴, 𝟮𝟬𝟮𝟱.
+            </b>
+            </a>
+          </p>
+        </div>
+      </div>
+      </div>
+      
+      <div class="scroll-reveal">
+        <div class="profile-card" style="background-color: rgba(0, 0, 0, 0.281);">
+          <p class="bio">
+            <a class="desc"href="https://www.facebook.com/share/p/15co4o7Quo/" target="_blank">
+            <img src="gallery/COMSELEC INTERVIEW SCREENING.jpg" alt="Image 1" class="profile-pic"
+            b>𝗞𝗡𝗢𝗪 𝗠𝗢𝗥𝗘 𝗔𝗕𝗢𝗨𝗧 𝗢𝗨𝗥 𝗙𝗨𝗧𝗨𝗥𝗘 𝗟𝗘𝗔𝗗𝗘𝗥𝗦 The Commission on Student Elections has conducted a comprehensive series of interviews and screenings for the aspiring candidates of the 
+            𝙃𝙞𝙜𝙝𝙚𝙧 𝙀𝙭𝙚𝙘𝙪𝙩𝙞𝙫𝙚 𝙖𝙣𝙙 𝙇𝙚𝙜𝙞𝙨𝙡𝙖𝙩𝙞𝙫𝙚 𝙀𝙡𝙚𝙘𝙩𝙞𝙤𝙣𝙨 2025. Following the guidelines set in Article V, Section 9 (e) and (f) of the COMSELEC Constitution and By-Laws, each candidate was graded based on the General Criteria. 
+            📌 For any concerns or clarifications, feel free to message our official Facebook page.</b>
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="scroll-reveal">
+        <div class="profile-card" style="background-color: rgba(0, 0, 0, 0.281);">
+          <p class="bio">
+            <a class="desc"href="https://www.facebook.com/TUPVADMISSION/posts/pfbid02oVkSwiB6WrUp8sNUWvvvd3Vi7Vk83AeSKXSGrYSXib7EwSP2Yn7pGpvcaoRfn9uUl" target="_blank">
+            <img src="gallery/chedro.jpg"Image 1" class="profile-pic">
+            <b>At the 1st CHEDRO XVIII - Negros Island Region Regional Quality Awards held at Siliman University, Dumaguete City, Technological University of the Philippines Visayas  was recognized for its outstanding academic achievements
+            </b>
+            </a>
+          </p>
+        </div>
+      </div>  
+      
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>&copy; 2025 Technological University of the Philippines Visayas</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,855 @@
+/* Color Palette */
+:root {
+  --blood-orange: #FE0000;
+  --grace-red: #AF0000;
+  --pigment-red: #730000;
+  --midnight: #00232A;
+  --sunray: #FF9B9B;
+  --snow: #FFFFFA;
+  --soft-white: #fdfdfd;
+  --dark-blue: #00232A;
+  --transition-time: 0.5s;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Main Css */
+body {
+  
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--midnight);
+  opacity: 0;
+  background-color: black;
+  transition: opacity 0.8s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+  background-color: rgb(0, 0, 0);
+}
+.top-bar {
+  background: linear-gradient(to right, #aa1919, #5d0f0f);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.univ-info h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.univ-info p {
+  font-style: italic;
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.top-bar-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 15px;
+}
+
+/* Main Navigation Section */
+.nav-bar {
+  background-color: #002b36;
+}
+
+.nav-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar ul li {
+  position: relative;
+}
+
+.nav-bar ul li a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #002b36;
+  position: relative;
+}
+
+/* Hover underline effect */
+.nav-bar > ul > li > a::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: var(--blood-orange);
+  position: absolute;
+  bottom: 7px;
+  left: 0;
+  transition: width 0.5s ease;
+}
+
+.nav-bar > ul > li:hover > a::before {
+  width: 100%;
+}
+
+/* Underline for dropdown links */
+.nav-bar .dropdown a {
+  position: relative;
+}
+
+.nav-bar .dropdown a::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: var(--blood-orange);
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  transition: width 0.5s ease;
+}
+
+.nav-bar .dropdown a:hover::before {
+  width: 100%;
+}
+
+
+/* Dropdown styles */
+.nav-bar .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #002b36;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  z-index: 999;
+}
+
+.nav-bar .dropdown li {
+  width: 100%;
+}
+
+.nav-bar .dropdown a {
+  padding: 12px 20px;
+  background-color: #7c0000;
+  display: block;
+}
+
+/* Show dropdown on hover */
+.nav-bar ul li:hover > .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+/* ACTIVE PAGE underline with fading line */
+.nav-bar ul li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 4px;
+  background: rgba(254, 0, 0, 10);
+  border-radius: 50px;
+  filter: blur(2px);
+}
+
+/* Dropdown menu styling */
+.nav-bar ul li ul.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #800000;
+  min-width: 200px;
+  z-index: 999;
+  flex-direction: column;
+}
+
+.nav-bar ul li ul.dropdown li {
+  width: 100%;
+}
+
+.nav-bar ul li ul.dropdown li a {
+  padding: 12px 16px;
+  white-space: nowrap;
+  background-color: #002b36;
+  color: white;
+  font-weight: normal;
+}
+
+.nav-bar ul li ul.dropdown li a:hover {
+  background-color: #053440;
+}
+
+/* Show dropdown on hover */
+.nav-bar ul li:hover > ul.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-layout {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-bottom: 100px;
+  z-index: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.page-layout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('gallery/tupvsayas gwa gate.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(4px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.page-layout > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-layout h1{
+  display: flex;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.header {
+  font-size: 35px;
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/*SCROLL REVEAL*/
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  margin-top: 30px;
+  transform: translateY(0);
+}
+
+
+/* GALLERY BASTA MGA CARD NGA MAY CONTENT*/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform .2s ease-out;
+}
+
+.logos{
+  background-color: white;
+}
+
+.profile-card:hover {
+  transform: scale(1.05); 
+} 
+
+a.desc {
+  display: block;
+  font-size: 18px;
+  text-align: justify;
+  color: #fff; /* white text */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+  margin-top: -50px;
+  text-decoration: none;
+}
+
+.resultheader{
+  display: block;
+  font-size: 18px;
+  text-align: justify;
+  color: #fff; /* white text */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.bio { 
+  display: block;
+  font-size: 18px;
+  text-align: justify;
+  color: #fff; /* white text */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+  margin-top: 10px;
+  text-decoration: none;
+
+}
+/* Header with button */
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.panel-header h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.view-all {
+  background: transparent;
+  border: 1px solid #ccc;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-all:hover {
+  background: #f5f5f5;
+}
+
+/* Announcement list */
+.announcement-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.announcement-card {
+  background: #fafafa;
+  border: 1px solid #eee;
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.announcement-card:hover {
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Label and date */
+.badge-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.label {
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.label.announcement {
+  background-color: #b71c1c;
+}
+
+.label.advisory {
+  background-color: #ff9800;
+}
+
+.posted-date {
+  font-size: 0.7rem;
+  color: #666;
+}
+
+/* Title and note */
+.announcement-card h3 {
+  font-size: 0.95rem;
+  margin: 0 0 4px;
+  color: #222;
+}
+
+.note {
+  text-align: justify;
+  font-size: 0.8rem;
+  color: #555;
+}
+
+* {box-sizing:border-box}
+
+.slideshow-wrapper {
+  background-color: #fdecea;
+  padding: 0;
+}
+
+.slideshow-container {
+  width: 100%;
+  max-height: 720px;
+  aspect-ratio: 16 / 9;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  background: transparent; 
+}
+
+.mySlides {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mySlides video,
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  background-color: black;
+  animation-duration: 0.1s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* CAMPUS DIRECTOR */
+.container {
+  display: flex;
+  justify-content: flex-start; /* align items from left */
+  align-items: flex-start;
+  gap: 50px;
+  padding: 50px;
+  flex-wrap: nowrap; /* keep them side by side */
+}
+.left-side {
+  display: flex;
+  gap: 30px;
+  max-width: 700px;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+/* Director Profile */
+.director-profile {
+  display: flex;
+  flex: 0 0 250px;
+  align-items: left;
+  flex-direction: column;
+  align-items: center;
+  width: 650px;
+  padding: 30px;
+  background-color: black;
+  border-radius: 12px;
+}
+
+.director-profile img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-left: 280px;
+  border: 4px solid #b71c1c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: -90px;
+  background: white;
+  z-index: 2;
+}
+
+.cards-container {
+  position: relative;
+  z-index: 1;
+  margin-left: 280px;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 100px 30px 40px;
+  max-width: 400px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.name {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.role {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+/* TUPV Description */
+.tupv-description {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  margin-left: 300px;
+  width: 900px;
+  max-width: 1200px;
+  line-height: 1.6;
+  font-size: 15px;
+  border: 1px solid #ffffff33;
+}
+
+.tupv-description h3 {
+  color: #fd1b1b;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.tupv-description ul {
+  padding-left: 20px;
+  list-style-type: disc;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.tupv-description strong {
+  color: #ffffff;
+}
+
+    /* Campus List */
+.campus-list {
+  width: 360px;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.campus-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.campus-card:hover {
+  transform: translateY(-5px);
+}
+
+.campus-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.campus-info {
+  padding: 15px;
+}
+
+.campus-info h4 {
+  color: #b71c1c;
+  margin: 0 0 5px 0;
+}
+
+.campus-info p {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.campus-list h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+.scroll-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+/* COLLEGE OF ENGINEERING */
+.co-eng h1 {
+  text-align: center;
+}
+
+.co-engcontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .co-engprofile-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    text-align: center;
+    padding: 30px 20px 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .co-engprofile-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  }
+
+  .co-engprofile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #6366f1;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(99,102,241,0.5);
+  }
+
+
+
+/* LINKS */
+.QUICKLINK {
+  background-color:white ;
+}
+
+.QUICKLINK {
+  background-color: black;
+  padding: 20px 0;
+}
+
+.LINKS {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.LINKS h1{
+  color: white;
+}
+
+/* Flex container for the inner section holding logos */
+.LINKS-LOGOS {
+  display: flex;
+  flex-direction: row;       /* horizontal layout */
+  justify-content: center;   /* center logos horizontally */
+  gap: 40px;                 /* space between logo blocks */
+  flex-wrap: wrap;           /* wrap if screen too small */
+}
+
+.logolinks {
+  color: black;
+  text-align: center;
+  width: 120px;              /* fixed width for consistency */
+}
+
+.logolinks img {
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.trans-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* centers content horizontally */
+  text-decoration: none; /* keep no underline */
+}
+
+.trans-link h1 {
+  margin: 10px 0 0 0; /* small margin top, zero other margins */
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  text-align: center;  /* just in case */
+}
+/* Main Footer */
+.footer {
+  background-color: var(--midnight);
+  color: var(--snow);
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .dropdown-parent .dropdown {
+    display: none;
+    flex-direction: column;
+    position: static; /* instead of absolute */
+    background-color: #053440;
+    margin-top: 0; /* reset margin */
+    box-shadow: none; /* remove shadow so dropdown blends */
+  }
+
+  .dropdown-parent.active-dropdown .dropdown {
+    display: flex;
+  }
+
+  /* Override hover dropdowns on mobile */
+  .dropdown-parent:hover .dropdown {
+    display: none;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .left-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .univ-info h1 {
+    font-size: 1rem;
+  }
+
+  .univ-info p {
+    font-size: 0.85rem;
+  }
+
+  .logo {
+    width: 60px;
+  }
+
+  .top-bar-content {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-bar {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-bar.active {
+    display: flex;
+  }
+
+  .nav-bar ul {
+    flex-direction: column;
+    background-color: #002b36;
+  }
+
+  .nav-bar ul li {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    position: relative; /* important for dropdown inside flow */
+  }
+
+  .nav-bar ul li a {
+    padding: 12px 0;
+  }}
+
+@media (max-width: 480px) {
+  .top-bar {
+    padding: 10px 15px;
+  }
+
+  .nav-bar ul li a {
+    font-size: 0.9rem;
+  }}

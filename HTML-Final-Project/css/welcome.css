@@ -1,0 +1,151 @@
+  :root {
+    --red: #fe0000;
+    --bg: #fdfdfd;
+    --dark: #111;
+    --dark-blue: #2c0000;
+    --grace-red: #AF0000;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    --rounded: 14px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: var(--bg);
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+  }
+
+  .logo {
+    width: 80px;
+    margin-left: 30px;
+    margin-top: 30px;
+    height: auto;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.2s;
+  }
+
+  /* Keyframes */
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .welcome-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, rgb(255, 235, 235) -30%, var(--grace-red) 45%, var(--dark-blue) 100%);
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin-bottom: 15px;
+    color: white;
+  }
+
+  p {
+    font-size: 1rem;
+    max-width: 500px;
+    margin-bottom: 30px;
+    color: #ffffff;
+  }
+
+  .enter-btn {
+    display: inline-block;
+    background-color: var(--red);
+    color: white;
+    padding: 12px 26px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: var(--shadow);
+    transition: background-color 0.3s ease;
+  }
+
+  .enter-btn:hover {
+    background-color: #cc0000;
+  }
+
+  /* Animations */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease forwards;
+  }
+
+  .delay {
+    animation-delay: 0.4s;
+  }
+  .delay-2 {
+    animation-delay: 0.8s;
+  }
+  .delay-3 {
+    animation-delay: 1.2s;
+  }
+  .fade-out {
+    opacity: 0;
+    background-color: black;
+    transition: opacity 0.8s ease;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+  /* Credits in bottom right */
+  .credits {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    font-size: 0.9rem;
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 400;
+    font-style: italic;
+    z-index: 50;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 1s ease forwards;
+    animation-delay: 0.8s;
+  }

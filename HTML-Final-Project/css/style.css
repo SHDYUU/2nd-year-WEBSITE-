@@ -1,0 +1,621 @@
+/* Color Palette */
+:root {
+  --blood-orange: #FE0000;
+  --grace-red: #AF0000;
+  --pigment-red: #730000;
+  --midnight: #00232A;
+  --sunray: #FF9B9B;
+  --snow: #FFFFFA;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Main Css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--snow);
+  color: var(--midnight);
+}
+
+.top-bar {
+  background: linear-gradient(to right, #aa1919, #5d0f0f);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.univ-info h1 {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.univ-info p {
+  font-style: italic;
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.top-bar-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 15px;
+}
+/* Main Navigation Section */
+.nav-bar {
+  background-color: #002b36; /* TUP deep blue */
+}
+
+.nav-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar ul li {
+  position: relative;
+}
+
+.nav-bar ul li a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #002b36;
+  position: relative;
+}
+
+/* Hover underline effect */
+.nav-bar > ul > li > a::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: var(--blood-orange);
+  position: absolute;
+  bottom: 7px; /* adjust as needed */
+  left: 0;
+  transition: width 0.5s ease;
+}
+
+.nav-bar > ul > li:hover > a::before {
+  width: 100%;
+}
+
+/* Underline for dropdown links */
+.nav-bar .dropdown a {
+  position: relative;
+}
+
+.nav-bar .dropdown a::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: var(--blood-orange);
+  position: absolute;
+  bottom: 1px; /* different from top nav, adjust as needed */
+  left: 0;
+  transition: width 0.5s ease;
+}
+
+.nav-bar .dropdown a:hover::before {
+  width: 100%;
+}
+
+
+/* Dropdown styles */
+.nav-bar .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: 002b36; /* maroon */
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  z-index: 999;
+}
+
+.nav-bar .dropdown li {
+  width: 100%;
+}
+
+.nav-bar .dropdown a {
+  padding: 12px 20px;
+  background-color: #7c0000;
+  display: block;
+}
+
+/* Show dropdown on hover */
+.nav-bar ul li:hover > .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+/* ACTIVE PAGE underline with fading line */
+.nav-bar ul li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 4px;
+  background: rgba(254, 0, 0, 10); /* soft white fade */
+  border-radius: 50px;
+  filter: blur(2px); /* fading edges */
+}
+
+/* Dropdown menu styling */
+.nav-bar ul li ul.dropdown {
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #800000;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  flex-direction: column;
+}
+
+.nav-bar ul li ul.dropdown li {
+  width: 100%;
+}
+
+.nav-bar ul li ul.dropdown li a {
+  padding: 12px 16px;
+  white-space: nowrap;
+  background-color: #002b36;
+  color: white;
+  font-weight: normal;
+  position: relative;
+}
+
+.nav-bar ul li ul.dropdown li a:hover {
+  background-color: #053440;
+}
+
+/* Show dropdown on hover */
+.nav-bar ul li:hover > ul.dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+/* Announcement list */
+.announcement-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.announcement-card {
+  background: #fafafa;
+  border: 1px solid #eee;
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.announcement-card:hover {
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Label and date */
+.badge-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.label {
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.label.announcement {
+  background-color: #b71c1c;
+}
+
+.label.advisory {
+  background-color: #ff9800;
+}
+
+.posted-date {
+  font-size: 0.7rem;
+  color: #666;
+}
+
+/* Title and note */
+.announcement-card h3 {
+  font-size: 0.95rem;
+  margin: 0 0 4px;
+  color: #222;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SLIDE SHOW */
+* {box-sizing:border-box}
+
+.slideshow-container {
+  max-width: 1080px;
+  max-height: 720px;
+  aspect-ratio: 16 / 9;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  background: transparent; 
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.mySlides video,
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* or contain, depending on your layout */
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* CAMPUS DIRECTOR */
+.director-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+
+.director-profile img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #b71c1c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: -90px; /* Overlaps the card */
+  background: white;
+  z-index: 2;
+}
+
+
+.profile-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 100px 30px 40px; 
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* DESCRIPTION AH */
+.name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* GALLERY BASTA MGA CARD NGA MAY CONTENT*/
+ .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+ img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+a.desc {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+
+
+/* Website.HTML| Home */
+/* Cards Section */
+
+
+/* About.HTML */
+.center-content {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.hymn-text {
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.core-values-list {
+  text-align: left;
+  display: inline-block;
+  margin-top: 1rem;
+  padding-left: 1rem;
+  list-style: disc;
+}
+
+.core-values-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Main Footer */
+.footer {
+  background-color: var(--midnight);
+  color: var(--snow);
+  text-align: center;
+  padding: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .dropdown-parent .dropdown {
+    display: none;
+    flex-direction: column;
+    position: static; /* instead of absolute */
+    background-color: #053440;
+    margin-top: 0; /* reset margin */
+    box-shadow: none; /* remove shadow so dropdown blends */
+  }
+
+  .dropdown-parent.active-dropdown .dropdown {
+    display: flex;
+  }
+
+  /* Override hover dropdowns on mobile */
+  .dropdown-parent:hover .dropdown {
+    display: none;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .left-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .univ-info h1 {
+    font-size: 1rem;
+  }
+
+  .univ-info p {
+    font-size: 0.85rem;
+  }
+
+  .logo {
+    width: 60px;
+  }
+
+  .top-bar-content {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-bar {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-bar.active {
+    display: flex;
+  }
+
+  .nav-bar ul {
+    flex-direction: column;
+    background-color: #002b36;
+  }
+
+  .nav-bar ul li {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    position: relative; /* important for dropdown inside flow */
+  }
+
+  .nav-bar ul li a {
+    padding: 12px 0;
+  }}
+
+@media (max-width: 480px) {
+  .top-bar {
+    padding: 10px 15px;
+  }
+
+  .nav-bar ul li a {
+    font-size: 0.9rem;
+  }}
